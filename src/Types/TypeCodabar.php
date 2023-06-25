@@ -40,7 +40,8 @@ class TypeCodabar implements TypeInterface
     {
         $barcode = new Barcode($code);
 
-        $code = 'A' . strtoupper($code) . 'A';
+        //$code = 'A' . strtoupper($code) . 'A';
+        $code = strtoupper($code);
 
         for ($i = 0; $i < strlen($code); ++$i) {
             if (! isset($this->conversionTable[(string)$code[$i]])) {
